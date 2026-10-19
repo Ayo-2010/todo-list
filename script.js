@@ -54,8 +54,10 @@ function render() {
     li.dataset.id = task.id;
 
     if (editingId === task.id) {
-      li.innerHTML = `<input class="edit-input" value="${task.text.replace(/"/g, '&quot;')}">`;
-      const input = li.querySelector('.edit-input');
+      const input = document.createElement('input');
+      input.className = 'edit-input';
+      input.value = task.text;
+      li.appendChild(input);
       input.focus();
       input.setSelectionRange(input.value.length, input.value.length);
       const commit = () => {
