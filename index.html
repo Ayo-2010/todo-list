@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taskly — To-Do List</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+  <header class="app-head">
+    <div>
+      <h1>Taskly</h1>
+      <p id="dateLine"></p>
+    </div>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">🌙</button>
+  </header>
+
+  <section class="progress-wrap">
+    <div class="progress-meta">
+      <span id="progressLabel">0 of 0 done</span>
+      <span id="progressPct">0%</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  </section>
+
+  <form class="add-form" id="addForm">
+    <input type="text" id="taskInput" placeholder="What needs to be done?" maxlength="120" autocomplete="off">
+    <button type="submit">Add</button>
+  </form>
+
+  <nav class="filters" id="filters">
+    <button class="filter is-active" data-filter="all">All</button>
+    <button class="filter" data-filter="active">Active</button>
+    <button class="filter" data-filter="done">Done</button>
+  </nav>
+
+  <ul class="task-list" id="taskList"></ul>
+
+  <p class="empty" id="emptyState" hidden>Nothing here yet — add your first task above.</p>
+
+  <footer class="app-foot">
+    <span id="itemsLeft">0 items left</span>
+    <button id="clearDone">Clear completed</button>
+  </footer>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
